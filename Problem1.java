@@ -44,8 +44,6 @@ class Twitter {
     public List<Integer> getNewsFeed(int userId) {
         List<Integer> result = new ArrayList<>();
         PriorityQueue<Tweet> pq = new PriorityQueue<>((a,b) -> a.timeStamp - b.timeStamp);
-        //if user has no tweets return empty list
-        if(tweetsMap.get(userId) == null) return result;
         //get the user followers
         HashSet<Integer> followees = followeeMap.get(userId);
         if(followees != null) {
